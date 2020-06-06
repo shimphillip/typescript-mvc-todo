@@ -16,13 +16,18 @@ class Model {
 
   addTodo(newText: string) {
     this.todos.push({
-      id: this.todos[this.todos.length - 1].id + 1,
+      id: this.todos.length > 0 ? this.todos[this.todos.length - 1].id + 1 : 1,
       text: newText,
       complete: false,
     })
   }
 
   deleteTodo(id: number) {
+    const doesExist = this.todos.find((todo) => todo.id === id)
+    if (!doesExist) {
+      return
+    }
+
     const newTodos = this.todos.filter((todo) => todo.id !== id)
     this.todos = newTodos
   }
@@ -53,6 +58,10 @@ class Model {
     })
 
     this.todos = newTodos
+  }
+
+  getTodos() {
+    return this.todos
   }
 
   getLength() {
