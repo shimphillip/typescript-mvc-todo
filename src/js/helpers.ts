@@ -1,4 +1,4 @@
-interface Todos {
+export interface Todos {
   id: number
   text: string
   complete: boolean

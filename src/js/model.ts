@@ -1,8 +1,4 @@
-interface Todos {
-  id: number
-  text: string
-  complete: boolean
-}
+import { Todos } from './helpers'
 
 class Model {
   todos: Todos[]
@@ -23,8 +19,8 @@ class Model {
   }
 
   deleteTodo(id: number) {
-    const doesExist = this.todos.find((todo) => todo.id === id)
-    if (!doesExist) {
+    const todoExists = this.todos.find((todo) => todo.id === id)
+    if (!todoExists) {
       return
     }
 
