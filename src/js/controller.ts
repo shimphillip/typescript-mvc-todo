@@ -5,6 +5,7 @@ import { elements, renderTodos, clearTodos } from './view'
 /**
  * Initialization
  */
+
 const Todo = new Model()
 const todos = Todo.getTodos()
 renderTodos(todos)
@@ -16,13 +17,12 @@ renderTodos(todos)
 elements.submitButton.addEventListener('click', (e) => {
   e.preventDefault()
 
-  // Grab the text
   const newText = elements.todoInputBox.value
 
-  // instantiate an object
   Todo.addTodo(newText)
   const todos = Todo.getTodos()
 
-  // render todos
+  // clean up and render
+  clearTodos()
   renderTodos(todos)
 })

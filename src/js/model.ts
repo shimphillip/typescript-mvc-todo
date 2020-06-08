@@ -1,7 +1,7 @@
-import { Todos } from './helpers'
+import { Todo } from './helpers'
 
 class Model {
-  todos: Todos[]
+  todos: Todo[]
 
   constructor() {
     this.todos = [

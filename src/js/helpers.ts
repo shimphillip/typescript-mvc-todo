@@ -1,10 +1,10 @@
-export interface Todos {
+export interface Todo {
   id: number
   text: string
   complete: boolean
 }
 
-export const areUniqueIds = (arr: Todos[]) => {
+export const areUniqueIds = (arr: Todo[]) => {
   const uniqIds: number[] = []
 
   arr.forEach(({ id }) => {

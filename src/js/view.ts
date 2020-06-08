@@ -1,4 +1,4 @@
-import { Todos } from './helpers'
+import { Todo } from './helpers'
 
 export const elements = {
   todoInputBox: document.querySelector('#inputText') as HTMLInputElement,
@@ -10,18 +10,18 @@ export const clearTodos = () => {
   elements.list.innerHTML = ''
 }
 
-const renderTodo = () => {
-  const todo = `
+const renderTodo = (todo: Todo) => {
+  const html = `
   <li>
-    <input type="checkbox" />
-      <span contenteditable="true" class="editable">Check</span>
+    <input type="checkbox" ${todo.complete ? 'checked' : ''}/>
+      <span contenteditable="true" class="editable">${todo.text}</span>
     <button class="delete">Delete</button>
   </li>
   `
 
-  elements.list.insertAdjacentHTML('afterbegin', todo)
+  elements.list.insertAdjacentHTML('beforeend', html)
 }
 
-export const renderTodos = (todos: Todos[]) => {
+export const renderTodos = (todos: Todo[]) => {
   todos.forEach(renderTodo)
 }
