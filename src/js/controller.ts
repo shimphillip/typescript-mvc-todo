@@ -1,28 +1,37 @@
 // import view from './view'
 import Model from './Model'
-import { elements, renderTodos, clearTodos } from './view'
+import * as view from './view'
 
 /**
  * Initialization
  */
-
 const Todo = new Model()
 const todos = Todo.getTodos()
-renderTodos(todos)
+view.renderTodos(todos)
 
 /**
- * Submit button handloer
+ * Submit button handler
  */
+view.elements.submitButton.addEventListener('click', (event) => {
+  event.preventDefault()
 
-elements.submitButton.addEventListener('click', (e) => {
-  e.preventDefault()
-
-  const newText = elements.todoInputBox.value
+  const newText = view.elements.todoInputBox.value
 
   Todo.addTodo(newText)
   const todos = Todo.getTodos()
+  const newTodo = todos[todos.length - 1]
 
-  // clean up and render
-  clearTodos()
-  renderTodos(todos)
+  // append new todo
+  view.renderTodo(newTodo)
+})
+
+/**
+ * Remove todo
+ */
+view.elements.list.addEventListener('click', (event) => {
+  if ((<HTMLElement>event.target).classList[0] === 'delete') {
+    const todo = (<HTMLElement>event.target).parentElement
+    Todo.deleteTodo(Number(todo.id))
+    todo.parentElement.removeChild(todo)
+  }
 })

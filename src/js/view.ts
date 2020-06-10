@@ -10,9 +10,9 @@ export const clearTodos = () => {
   elements.list.innerHTML = ''
 }
 
-const renderTodo = (todo: Todo) => {
+export const renderTodo = (todo: Todo) => {
   const html = `
-  <li>
+  <li id="${todo.id}">
     <input type="checkbox" ${todo.complete ? 'checked' : ''}/>
       <span contenteditable="true" class="editable">${todo.text}</span>
     <button class="delete">Delete</button>
