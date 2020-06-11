@@ -1,14 +1,8 @@
-# Gotta Search'EM All
+# Typescript MVC Todo
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/9db2adc2-c53f-4c74-b7b6-ed358dadd1f7/deploy-status)](https://app.netlify.com/sites/gotta-search-em-all/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/effcb93b-90f8-4aec-924e-9279ddf1b893/deploy-status)](https://app.netlify.com/sites/typescript-mvc-todo/deploys)
 
 ![screenshot](./docs/screenshot.png)
-
-![screenshot](./docs/performance.png)
-
-## Getting Started
-
-Visit to see the live app https://gotta-search-em-all.netlify.app/
 
 ### Prerequisites
 
@@ -18,21 +12,27 @@ Visit to see the live app https://gotta-search-em-all.netlify.app/
 
 ```zsh
 # clone the repo
-git clone https://github.com/shimphillip/gotta-search-em-all.git
+git clone https://github.com/shimphillip/typescript-mvc-todo.git
 
 # navigate to the directory
-cd gotta-search-em-all
+cd typescript-mvc-todo
 
 # install packages
-npm install or yarn
+npm run dev
 
-# start the app
-npm run start or yarn start
+# build packages
+npm run build
 ```
 
 ## Running the tests
 
-No tests yet🙊
+```zsh
+# runs the tests once
+npm run test
+
+# runs and watches the tests
+npm run test:watch
+```
 
 ## Deployment
 
@@ -40,21 +40,16 @@ Easy deployment with netlify :)
 
 ## Built With
 
-- React and its hooks
-- Emotion.js
+- TypeScript
+- Parcel Bundler
 
 ## Contributing
 
 Issues/Bug Reports and PR's welcome!
 
-## Versioning
-
-1.0.0
-
 ## Authors
 
 - Phillip Shim
-- [ldss3sang](https://github.com/ldss3sang)
 
 ## License
 
@@ -62,12 +57,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-1. https://codepen.io/siliconunicorn/pen/VqoxXP - Design Inspration
-
-2. https://codepen.io/animeshk874/pen/WGpAkj for the pokemon loader animation
-
-3. https://nostalgic-css.github.io/NES.css/ Pokeball sprites frm Nes.css
-
-4. https://github.com/klaussinani/hyper-pokemon Background wallpapers
-
-5. https://pokeapi.co/ PokeAPI
+1. https://www.taniarascia.com/javascript-mvc-todo-app/ - Tutorial inspiration from Tania Rascia
