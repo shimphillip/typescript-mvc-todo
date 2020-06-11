@@ -43,9 +43,10 @@ view.elements.list.addEventListener('click', (event) => {
 view.elements.list.addEventListener('click', (event) => {
   const element = event.target as HTMLInputElement
 
-  if (element.classList[0] === 'checkbox') {
+  if (element.closest('.checkbox')) {
     const todo = element.parentElement
     Todo.toggleTodo(Number(todo.id))
+    view.markSiblingComplete(element)
   }
 })
 

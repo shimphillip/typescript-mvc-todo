@@ -9,8 +9,12 @@
     "test": "jest",
     "test:watch": "jest --watch"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "typescript",
+    "todo",
+    "parcel"
+  ],
+  "author": "Phillip Shim",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^25.2.3",
