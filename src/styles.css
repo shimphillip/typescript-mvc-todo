@@ -39,7 +39,7 @@ form {
 button {
   padding: 0.5rem 1rem;
   font-size: 1.5rem;
-  border: 2px solid #ccc;
+  border: 2px solid var(--color-primary);
   border-radius: 4px;
   color: white;
   cursor: pointer;
@@ -83,8 +83,8 @@ li span {
 
 li button {
   flex: 10%;
-  background: #007bff;
-  border: 2px solid #007bff;
+  background: var(--color-accent);
+  border: 2px solid var(--color-accent);
 }
 
 .complete {
