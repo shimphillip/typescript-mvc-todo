@@ -5,8 +5,8 @@ class Model {
 
   constructor() {
     this.todos = [
-      { id: 1, text: 'Run a marathon', complete: false },
-      { id: 2, text: 'Plant a garden', complete: false },
+      { id: 1, text: 'Learn Typescript', complete: false },
+      { id: 2, text: 'Walk your dog', complete: false },
     ]
   }
 

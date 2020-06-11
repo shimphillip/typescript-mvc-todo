@@ -10,11 +10,10 @@ const todos = Todo.getTodos()
 view.renderTodos(todos)
 
 /**
- * Submit button handler
+ * Add todo
  */
 view.elements.submitButton.addEventListener('click', (event) => {
   event.preventDefault()
-
   const newText = view.elements.todoInputBox.value
 
   Todo.addTodo(newText)
@@ -29,9 +28,36 @@ view.elements.submitButton.addEventListener('click', (event) => {
  * Remove todo
  */
 view.elements.list.addEventListener('click', (event) => {
-  if ((<HTMLElement>event.target).classList[0] === 'delete') {
-    const todo = (<HTMLElement>event.target).parentElement
+  const element = event.target as HTMLElement
+
+  if (element.classList[0] === 'delete') {
+    const todo = element.parentElement
     Todo.deleteTodo(Number(todo.id))
-    todo.parentElement.removeChild(todo)
+    view.removeTodo(todo)
+  }
+})
+
+/**
+ * Toggle todo
+ */
+view.elements.list.addEventListener('click', (event) => {
+  const element = event.target as HTMLInputElement
+
+  if (element.classList[0] === 'checkbox') {
+    const todo = element.parentElement
+    Todo.toggleTodo(Number(todo.id))
+  }
+})
+
+/**
+ * Update todo
+ */
+view.elements.list.addEventListener('focusout', (event) => {
+  const element = event.target as HTMLElement
+
+  if (element.classList[0] === 'editable') {
+    const todo = element.parentElement
+    const updatedText = element.textContent
+    Todo.editTodo(Number(todo.id), updatedText)
   }
 })

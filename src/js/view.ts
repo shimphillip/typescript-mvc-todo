@@ -13,7 +13,7 @@ export const clearTodos = () => {
 export const renderTodo = (todo: Todo) => {
   const html = `
   <li id="${todo.id}">
-    <input type="checkbox" ${todo.complete ? 'checked' : ''}/>
+    <input class="checkbox" type="checkbox" ${todo.complete ? 'checked' : ''}/>
       <span contenteditable="true" class="editable">${todo.text}</span>
     <button class="delete">Delete</button>
   </li>
@@ -24,4 +24,8 @@ export const renderTodo = (todo: Todo) => {
 
 export const renderTodos = (todos: Todo[]) => {
   todos.forEach(renderTodo)
+}
+
+export const removeTodo = (element: HTMLElement) => {
+  element.parentElement.removeChild(element)
 }
